@@ -1,1 +1,1 @@
-# Othello-Implementation
+# Othello-Project
