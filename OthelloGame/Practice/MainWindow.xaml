@@ -55,7 +55,7 @@
             <Label x:Name="WinnerBox"
                    Width="50" 
                    Foreground="DarkOliveGreen" 
-                   HorizontalContentAlignment="Center" 
+                   HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center" 
                    Visibility="Hidden"
                    Grid.Column="2">Winner: </Label>

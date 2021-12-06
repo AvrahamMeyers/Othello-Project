@@ -67,12 +67,14 @@ namespace Practice
                 if (CheckWin())
                 {
                     Victory();
+                    return;
                 }
             }
 
             if (turns == 9)
             {
-                //game over
+                CatsGame();
+                return;
             }
 
 
@@ -185,6 +187,20 @@ namespace Practice
             WinnerBox.Visibility = Visibility.Visible;
         }
 
+        public void CatsGame()
+        {
+            WinnerBox.Content = "Oh well, its a cats game";
+            WinnerBox.Width = 170;
+            WinnerBox.FontSize = 15;
+            WinnerBox.Background = Brushes.Azure;
+            WinnerBox.Foreground = Brushes.DarkOrchid;
+            WinnerBox.HorizontalAlignment = HorizontalAlignment.Center;
+            WinnerBox.VerticalAlignment = VerticalAlignment.Center;
+            WinnerBox.HorizontalContentAlignment = HorizontalAlignment.Center;
+            WinnerBox.VerticalContentAlignment = VerticalAlignment.Center;
+            WinnerBox.Visibility = Visibility.Visible;
+        }
+
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
             foreach (Border border in Board.Children)
@@ -205,6 +221,9 @@ namespace Practice
         {
             WinnerBox.Content = "the AI feature is not supported yet";
             WinnerBox.Width = 195;
+            WinnerBox.FontSize = 10;
+            WinnerBox.Background = Brushes.Black;
+            WinnerBox.Foreground = Brushes.White;
             WinnerBox.Visibility = Visibility.Visible;
         }
     }
