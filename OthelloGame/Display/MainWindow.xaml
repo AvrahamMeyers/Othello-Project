@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Display"
         mc:Ignorable="d"
-        Title="Othello" Height="800" Width="800">
-    <Grid Name="Screen" Background="Gainsboro" ShowGridLines="True">
+        Title="Othello" Height="600" Width="600">
+    <Grid Name="Screen" Background="White" ShowGridLines="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
@@ -19,87 +19,44 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <WrapPanel Grid.ColumnSpan="3">
-            <Label Name="Win" 
-               Height="50" 
-               Width="120" 
-               VerticalAlignment="Top" 
-               HorizontalAlignment="Left"/>
-            <Canvas Background="Green" Height="50" Width="50" Margin="100,32,650,702">
-                <Ellipse Name="BlackLogo" Margin="0,0,0,0" Height="25" Width="25" Fill="Black"/>
-                <Ellipse Name="WhiteLogo" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Top="25" />
-                <Ellipse Name="BlackLogo2" Margin="0,0,0,0" Height="25" Width="25" Fill="Black" Canvas.Top="25" Canvas.Left="25" />
-                <Ellipse Name="WhiteLogo2" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Left="25" />
-            </Canvas>
+        <WrapPanel Grid.Column="1" Grid.Row="0">
+            
         </WrapPanel>
-
-        <Grid Grid.Row="1" Grid.Column="1"/>
-
-
-        <Grid Name ="Board" Margin="100,100,100,80" Background="White" ShowGridLines="True">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <Button Name="Zero"
-                    Content=""
-                    Background="White"
-                    Click="Button_Click"/>
-            <Button Name="One" 
-                    Grid.Column="1"
-                    Content=""
-                    Background="White"
-                    Click="Button_Click"/>
-            <Button Name="Two" 
-                    Grid.Column="2"
-                    Content=""
-                    Background="White" 
-                    Click="Button_Click"/>
-            <Button Name="Three" 
-                    Grid.Row="1"
-                    Content=""
-                    Background="White" 
-                    Click="Button_Click"/>
-            <Button Name="Four" 
-                    Grid.Row="1" 
-                    Grid.Column="1"
-                    Content=""
-                    Background="White" 
-                    Click="Button_Click"/>
-            <Button Name="Five" 
-                    Grid.Row="1" 
-                    Grid.Column="2"
-                    Content=""
-                    Background="White" 
-                    Click="Button_Click"/>
-            <Button Name="Six" 
-                    Grid.Row="2"
-                    Content=""
-                    Background="White" 
-                    Click="Button_Click"/>
-            <Button Name="Seven" 
-                    Grid.Row="2" 
-                    Grid.Column="1"
-                    Content=""
-                    Background="White" 
-                    Click="Button_Click"/>
-            <Button Name="Eight" 
-                    Grid.Row="2" 
-                    Grid.Column="2"
-                    Content=""
-                    Background="White" 
-                    Click="Button_Click"/>
-        </Grid>
-
         
+        
+        
+        
+        
+        
+        
+        
+        
+        <Canvas Grid.Column="0" Grid.Row="0" Background="Green" Height="50" Width="50">
+            <Ellipse Name="BlackLogo" Margin="0,0,0,0" Height="25" Width="25" Fill="Black"/>
+            <Ellipse Name="WhiteLogo" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Top="25" />
+            <Ellipse Name="BlackLogo2" Margin="0,0,0,0" Height="25" Width="25" Fill="Black" Canvas.Top="25" Canvas.Left="25" />
+            <Ellipse Name="WhiteLogo2" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Left="25" />
+        </Canvas>
 
-        <TextBlock Width="110" FontSize="30" Margin="350,5,340,702" HorizontalAlignment="Center" VerticalAlignment="Top">Othello</TextBlock>
+        <Canvas Grid.Column="2" Grid.Row="0" Background="Green" Height="50" Width="50">
+            <Ellipse Name="BlackLogo3" Margin="0,0,0,0" Height="25" Width="25" Fill="Black"/>
+            <Ellipse Name="WhiteLogo3" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Top="25" />
+            <Ellipse Name="BlackLogo4" Margin="0,0,0,0" Height="25" Width="25" Fill="Black" Canvas.Top="25" Canvas.Left="25" />
+            <Ellipse Name="WhiteLogo4" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Left="25" />
+        </Canvas>
+
+        <Canvas Grid.Column="0" Grid.Row="2" Background="Green" Height="50" Width="50">
+            <Ellipse Name="BlackLogo5" Margin="0,0,0,0" Height="25" Width="25" Fill="Black"/>
+            <Ellipse Name="WhiteLogo5" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Top="25" />
+            <Ellipse Name="BlackLogo6" Margin="0,0,0,0" Height="25" Width="25" Fill="Black" Canvas.Top="25" Canvas.Left="25" />
+            <Ellipse Name="WhiteLogo6" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Left="25" />
+        </Canvas>
+
+        <Canvas Grid.Column="2" Grid.Row="2" Background="Green" Height="50" Width="50">
+            <Ellipse Name="BlackLogo7" Margin="0,0,0,0" Height="25" Width="25" Fill="Black"/>
+            <Ellipse Name="WhiteLogo7" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Top="25" />
+            <Ellipse Name="BlackLogo8" Margin="0,0,0,0" Height="25" Width="25" Fill="Black" Canvas.Top="25" Canvas.Left="25" />
+            <Ellipse Name="WhiteLogo8" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Left="25" />
+        </Canvas>
     </Grid>
 </Window>
