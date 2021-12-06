@@ -8,5 +8,69 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <WrapPanel x:Name="top" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="0">
+            <TextBlock Height="50" Width="100" TextWrapping="Wrap">hello there</TextBlock>
+        </WrapPanel>
+        <StackPanel Grid.Row="2" Grid.RowSpan="2">
+            <TextBlock>left side</TextBlock>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="2" Grid.Column="2" Grid.RowSpan="2">
+            <TextBlock>right side</TextBlock>
+        </StackPanel>
+
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Row="1" Grid.Column="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="0" Grid.Row="0">
+                    
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1" Grid.Row="0">
+
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="2" Grid.Row="0">
+
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="0" Grid.Row="1">
+
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1" Grid.Row="1">
+
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="2" Grid.Row="1">
+
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="0" Grid.Row="2">
+
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1" Grid.Row="2">
+
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="2" Grid.Row="2">
+
+                </Border>
+            </Grid>
+        </Border>
     </Grid>
 </Window>
