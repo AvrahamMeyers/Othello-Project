@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Practice"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Tic Tac Toe" Height="450" Width="800">
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -19,19 +19,67 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <WrapPanel x:Name="top" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="0">
-            <TextBlock Height="50" Width="100" TextWrapping="Wrap">hello there</TextBlock>
-        </WrapPanel>
-        <StackPanel Grid.Row="2" Grid.RowSpan="2">
-            <TextBlock>left side</TextBlock>
-        </StackPanel>
-        
-        <StackPanel Grid.Row="2" Grid.Column="2" Grid.RowSpan="2">
-            <TextBlock>right side</TextBlock>
-        </StackPanel>
+        <Canvas Background="Green" Height="50" Width="50" Grid.Column="0" Grid.Row="0" Visibility="Hidden">
+            <Ellipse Name="BlackLogo" Margin="0,0,0,0" Height="25" Width="25" Fill="Black"/>
+            <Ellipse Name="WhiteLogo" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Top="25" />
+            <Ellipse Name="BlackLogo2" Margin="0,0,0,0" Height="25" Width="25" Fill="Black" Canvas.Top="25" Canvas.Left="25" />
+            <Ellipse Name="WhiteLogo2" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Left="25" />
+        </Canvas>
 
-        <Border BorderBrush="Black" BorderThickness="5" Grid.Row="1" Grid.Column="1">
-            <Grid>
+        <Canvas Background="Green" Height="50" Width="50" Grid.Column="2" Grid.Row="0" Visibility="Hidden">
+            <Ellipse Name="BlackLogo3" Margin="0,0,0,0" Height="25" Width="25" Fill="Black"/>
+            <Ellipse Name="WhiteLogo3" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Top="25" />
+            <Ellipse Name="BlackLogo4" Margin="0,0,0,0" Height="25" Width="25" Fill="Black" Canvas.Top="25" Canvas.Left="25" />
+            <Ellipse Name="WhiteLogo4" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Left="25" />
+        </Canvas>
+
+        <Canvas Background="Green" Height="50" Width="50" Grid.Column="0" Grid.Row="2" Visibility="Hidden">
+            <Ellipse Name="BlackLogo5" Margin="0,0,0,0" Height="25" Width="25" Fill="Black"/>
+            <Ellipse Name="WhiteLogo5" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Top="25" />
+            <Ellipse Name="BlackLogo6" Margin="0,0,0,0" Height="25" Width="25" Fill="Black" Canvas.Top="25" Canvas.Left="25" />
+            <Ellipse Name="WhiteLogo6" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Left="25" />
+        </Canvas>
+
+        <Canvas Background="Green" Height="50" Width="50" Grid.Column="2" Grid.Row="2" Visibility="Hidden" >
+            <Ellipse Name="BlackLogo7" Margin="0,0,0,0" Height="25" Width="25" Fill="Black"/>
+            <Ellipse Name="WhiteLogo7" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Top="25" />
+            <Ellipse Name="BlackLogo8" Margin="0,0,0,0" Height="25" Width="25" Fill="Black" Canvas.Top="25" Canvas.Left="25" />
+            <Ellipse Name="WhiteLogo8" Margin="0,0,0,0" Height="25" Width="25" Fill="White" Canvas.Left="25" />
+        </Canvas>
+
+        <WrapPanel x:Name="BottomBar"  Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center">
+            <Button x:Name="ResetButton" Width="50" Height="30" Click="ResetButton_Click">Reset</Button>
+            <Button x:Name="StartButton" Width="50" Height="30" Click="StartButton_Click">Start</Button>
+        </WrapPanel>
+
+        <Grid x:Name="TopBar" Grid.Column="1" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label x:Name="Title" 
+                   Height="50" 
+                   Width="100" 
+                   FontSize="15" 
+                   Foreground="Brown" 
+                   HorizontalAlignment="Center"
+                   HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center"
+                   Grid.Column="1">Tic Tac Toe</Label>
+            <Label x:Name="WinnerBox"
+                   Width="50" 
+                   Foreground="DarkOliveGreen" 
+                   HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center" 
+                   Visibility="Hidden"
+                   Grid.Column="2">Winner: </Label>
+        </Grid>
+        
+
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="1">
+            <Grid x:Name="Board">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -43,32 +91,32 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="0" Grid.Row="0">
-                    
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="0">
+                    <Button x:Name="TopLeft" Content="" Background="White" Click="Button_Click"></Button>
                 </Border>
-                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1" Grid.Row="0">
-
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="0">
+                    <Button x:Name="TopCenter" Content="" Background="White" Click="Button_Click"></Button>
                 </Border>
-                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="2" Grid.Row="0">
-
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" Grid.Row="0">
+                    <Button x:Name="TopRight" Content="" Background="White" Click="Button_Click"></Button>
                 </Border>
-                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="0" Grid.Row="1">
-
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="1">
+                    <Button x:Name="MiddleLeft" Content="" Background="White" Click="Button_Click"></Button>
                 </Border>
-                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1" Grid.Row="1">
-
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="1">
+                    <Button x:Name="MiddleCenter" Content="" Background="White" Click="Button_Click"></Button>
                 </Border>
-                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="2" Grid.Row="1">
-
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" Grid.Row="1">
+                    <Button x:Name="MiddleRight" Content="" Background="White" Click="Button_Click"></Button>
                 </Border>
-                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="0" Grid.Row="2">
-
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="2">
+                    <Button x:Name="BottomLeft" Content="" Background="White" Click="Button_Click"></Button>
                 </Border>
-                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1" Grid.Row="2">
-
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="2">
+                    <Button x:Name="BottomCenter" Content="" Background="White" Click="Button_Click"></Button>
                 </Border>
-                <Border BorderBrush="Black" BorderThickness="5" Grid.Column="2" Grid.Row="2">
-
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" Grid.Row="2">
+                    <Button x:Name="BottomRight" Content="" Background="White" Click="Button_Click"></Button>
                 </Border>
             </Grid>
         </Border>
